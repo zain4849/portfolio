@@ -38,6 +38,7 @@
 
 // sections.forEach((section) => observer.observe(section));
 
+
 const blobs = document.querySelectorAll(".cursor-blob");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const isTouchDevice = 'ontouchstart' in window && window.matchMedia("(pointer: coarse)").matches;
@@ -101,26 +102,39 @@ const templateID = "YOUR_TEMPLATE_ID";
 const publicKey = "YOUR_PUBLIC_KEY";
 
 
-const sendEmail = (e) => {
+const sendEmail = async (e) => {
   e.preventDefault()
+
+  fetch("/.netlify/functions/sendEmail", {
+    method: "POST",
+    body: JSON.stringify({ name, email, message })
+  });
+
+  const name = form.name.value;
+  const email = form.email.value;
+  const message = form.message.value;
+
+  const response = await fetch("/.netlify/functions/sendEmail", {
+    method: "POST",
+    body: JSON.stringify({ name, email, message })
+  });
+
+  const result = await response.json();
 
 
   // serviceID - templateID - #form - publicKey
-  emailjs.sendForm(serviceID, templateID, '#contact-form', publicKey)
-  .then(() => {
-
-
+  // emailjs.sendForm(serviceID, templateID, '#contact-form', publicKey)
+  // .then(() => {
+  if (result.staus === 'success') {
     contactMessage.textContent = 'Message Sent Successfully'
-
     setTimeout(() => {
       contactMessage.textContent = ''
     }, 5000)
-
     contactForm.reset()
-  }, () => {
-    // Show error message
+  } else {
     contactMessage.textContent = 'Message not sent (service error)'
-  })
+  }
+  // })
 }
 
 contactForm.addEventListener('submit', sendEmail)
