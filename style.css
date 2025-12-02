@@ -60,7 +60,7 @@ body {
   font-family: var(--ff-text);
   background: var(--bg-primary);
   color: var(--text-primary);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   line-height: 1.6;
   cursor: none;
 }
@@ -245,7 +245,7 @@ section {
   position: relative;
   background: var(--bg-700);
   /* Fixed, modern vertical rhythm between sections */
-  padding: 120px 0;
+  padding: 3rem 0;
   min-height: 100vh;
   z-index: 1;
 }
@@ -434,7 +434,7 @@ section {
 .project-card {
   display: flex;
   flex-direction: column;
-  height: 430px;
+  height: 330px;
   /* max-height: fit-content; */
   overflow: hidden;
   border-radius: 20px;
@@ -511,7 +511,7 @@ section {
   border-radius: 1px solid white;
   margin-block: 3rem;
   gap: 1rem;
-  width: 100%;
+  width: fit-content;
 }
 
 .skill-category h3 {
@@ -533,7 +533,7 @@ hr {
 
 .skill-icons {
   display: flex;
-  width: 604px;
+  width: 100%;
   gap: 0rem;
 }
 
@@ -797,22 +797,21 @@ footer nav ul li a:hover {
   }
 } */
 @media (max-width: 1440px) {
-  /* Laptop-friendly sizing while keeping the bold look */
-  
+
   .hero-display {
     min-height: 500px;
   }
   #title-name {
-    font-size: 12rem;
+    font-size: 13rem;
   }
 
   #first-name {
-    left: 175px;
+    left: 120px;
     bottom: 130px;
   }
 
   #last-name {
-    right: 220px;
+    right: 180px;
     bottom: -10px;
   }
 
@@ -826,16 +825,15 @@ footer nav ul li a:hover {
     gap: 2rem;
     bottom: 55px;
     left: 200px;
-    
   }
 
   .hero-subtitle {
     font-size: 1rem;
   }
 
-.custom-links-color {
-  font-size: 44px;
-}
+  .custom-links-color {
+    font-size: 44px;
+  }
 
   #role {
     font-size: 18px;
@@ -850,41 +848,62 @@ footer nav ul li a:hover {
     transition: color 0.2s ease-in, background 0.2s ease-in;
   }
 
+  /* ------------------ Projects ------------------  */
   .projects h1,
-.skills h1 {
-  font-size: 3rem;
-}
+  .skills h1 {
+    font-size: 3rem;
+  }
 
-.project-title {
-  font-size: 1rem;
-}
+  .project-title {
+    font-size: 1rem;
+  }
 
-.project-description {
-  font-size: 0.65rem;
-}
+  .project-description {
+    font-size: 0.65rem;
+  }
 
-  
+
   .projects-grid {
-    grid-template-columns: repeat(2, 425px);
+    grid-template-columns: repeat(2, minmax(220px, 30%));
     gap: 3rem;
     padding: 2rem 3rem;
   }
 
 
-  .project-card {
-    max-height: 325px;
-  }
+  /* ------------------ Projects ------------------  */
+
   .skills-wrapper {
     width: 55%;
   }
 
+  .skill-category {
+    margin-block: 1.25rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1rem;
+  }
+
+  .skill-icons li i {
+    font-size: 3rem;
+  }
+
   .contact-title {
-    font-size: clamp(5rem, 7vw, 7.5rem);
+    font-size: 13rem;
   }
 
   .contact-form {
     width: 600px;
     height: auto;
+  }
+
+  .contact-input, .contact-label {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 1rem;
+
   }
 }
 
@@ -892,25 +911,38 @@ footer nav ul li a:hover {
 @media (max-width: 1024px) {
   #title-name {
     font-size: 15rem;
+    text-align: center;
   }
 
   #first-name {
+    position: static;
     left: 10px;
     bottom: 200px;
   }
 
   #last-name {
+    position: static;
     right: 10px;
     bottom: 20px;
   }
 
   #aspire-role {
+    position: static;
     font-size: 18px;
     right: -300px;
   }
 
+  .meta {
+    position: static;
+
+  }
+
+  .hero-content {
+    margin-top: 3rem;
+  }
+
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(225px, 300px));
     gap: 2rem;
     padding: 2rem;
   }
@@ -919,8 +951,16 @@ footer nav ul li a:hover {
     width: 60%;
   }
 
+  .skill-category {
+    display: block;
+  }
+
   .contact-title {
     font-size: 12rem;
+  }
+
+  footer {
+    font-size: 1rem;
   }
 }
 
@@ -966,7 +1006,6 @@ footer nav ul li a:hover {
     gap: 1.5rem;
     padding: 2rem 1rem;
     align-items: center;
-    
   }
 
   .social-links a i {
@@ -1030,7 +1069,7 @@ footer nav ul li a:hover {
 
   .project-card {
     max-width: 100%;
-    max-height: none;
+    /* max-height: none;   */
   }
 
   /* Skills Section */
@@ -1089,9 +1128,9 @@ footer nav ul li a:hover {
   }
 
   .contact-form {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    width: min(90vw, 700px);
+    /* max-width: 100%; */
+    /* height: auto; */
     padding: 2rem 1.5rem;
     background-color: transparent;
   }

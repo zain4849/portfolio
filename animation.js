@@ -16,28 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Update ScrollTrigger on Lenis scroll
 lenis.on("scroll", ScrollTrigger.update);
-// Custom Cursor
-// const cursor = document.querySelector(".cursor");
-// const cursorBlur = document.querySelector(".cursor-blur");
 
-// document.addEventListener('mousemove', (e) => {
-//   cursor.style.left = e.clientX + 'px';
-//   cursor.style.top = e.clientY + 'px';
-//   cursorBlur.style.left = e.clientX + 'px';
-//   cursorBlur.style.top = e.clientY + 'px';
-// });
-
-// Cursor interactions with links and buttons
-// document.querySelectorAll('a, button').forEach((element) => {
-//   element.addEventListener('mouseenter', () => {
-//     cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-//     cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
-//   });
-//   element.addEventListener('mouseleave', () => {
-//     cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-//     cursor.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-//   });
-// });
 
 // ============ STACKED SCROLL EFFECT ============
 
@@ -189,7 +168,7 @@ document.querySelectorAll(".skill-icons li").forEach((container) => {
   const tip = container.querySelector(".tooltip");
   container.addEventListener("mouseenter", () => {
     gsap.to(tip, {
-      y: -10,
+      y: -2,
       opacity: 1,
       duration: 0.1,
       ease: "power1.out",
@@ -197,7 +176,7 @@ document.querySelectorAll(".skill-icons li").forEach((container) => {
   });
   container.addEventListener("mouseleave", () => {
     gsap.to(tip, {
-      y: 10,
+      y: 2,
       opacity: 0,
       duration: 0.1,
       ease: "power2.in",

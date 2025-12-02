@@ -40,7 +40,7 @@
 
 const blobs = document.querySelectorAll(".cursor-blob");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+const isTouchDevice = 'ontouchstart' in window && window.matchMedia("(pointer: coarse)").matches;
 
 let mouseX = 0;
 let mouseY = 0;
