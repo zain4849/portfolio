@@ -32,7 +32,7 @@
 
   /* Base font sizes - responsive but closer to your original big look */
   --fs-regular: clamp(1.1rem, 1.2vw, 1.375rem);
-  --fs-title: clamp(6rem, 11vw, 14rem);
+  --fs-title: 18rem;
   --fs-h1: clamp(3rem, 5vw, 5.5rem);
 
   --fw-title: 700;
@@ -261,7 +261,7 @@ section {
   position: absolute;
   font-family: var(--ff-curl);
   font-size: 35px;
-  /* top: 200px; */
+  top: 150px;
   right: 10px;
   color: var(--bg-100);
 }
@@ -282,14 +282,14 @@ section {
 
 #first-name {
   position: absolute;
-  left: -65px;
+  left: 25px;
   bottom: 210px;
   color: var(--bg-100);
 }
 
 #last-name {
   position: absolute;
-  right: -100px;
+  right: -30px;
   bottom: 20px;
   color: var(--bg-500);
   /* Define the stroke width and color */
@@ -434,7 +434,7 @@ section {
 .project-card {
   display: flex;
   flex-direction: column;
-  height: 330px;
+  height: 400px;
   /* max-height: fit-content; */
   overflow: hidden;
   border-radius: 20px;
@@ -511,7 +511,7 @@ section {
   border-radius: 1px solid white;
   margin-block: 3rem;
   gap: 1rem;
-  width: fit-content;
+  width: 100%;
 }
 
 .skill-category h3 {
@@ -535,6 +535,7 @@ hr {
   display: flex;
   width: 100%;
   gap: 0rem;
+  justify-content: flex-end;
 }
 
 .skill-icons {
@@ -613,6 +614,7 @@ hr {
   font-family: var(--ff-title);
   font-size: var(--fs-title);
   color: var(--bg-200);
+  padding-left: 50px;
 }
 
 .contact-form {
@@ -797,7 +799,6 @@ footer nav ul li a:hover {
   }
 } */
 @media (max-width: 1440px) {
-
   .hero-display {
     min-height: 500px;
   }
@@ -854,6 +855,10 @@ footer nav ul li a:hover {
     font-size: 3rem;
   }
 
+  .project-card {
+    height: 330px;
+  }
+
   .project-title {
     font-size: 1rem;
   }
@@ -868,7 +873,6 @@ footer nav ul li a:hover {
     gap: 3rem;
     padding: 2rem 3rem;
   }
-
 
   /* ------------------ Projects ------------------  */
 
@@ -897,13 +901,13 @@ footer nav ul li a:hover {
     height: auto;
   }
 
-  .contact-input, .contact-label {
+  .contact-input,
+  .contact-label {
     font-size: 1rem;
   }
 
   footer {
     font-size: 1rem;
-
   }
 }
 
@@ -934,7 +938,6 @@ footer nav ul li a:hover {
 
   .meta {
     position: static;
-
   }
 
   .hero-content {
@@ -976,7 +979,7 @@ footer nav ul li a:hover {
   }
 
   #title-name {
-    font-size: 2rem;
+    font-size: 8rem;
   }
 
   #first-name {
@@ -1002,9 +1005,11 @@ footer nav ul li a:hover {
   }
 
   .meta {
+    display: flex;
+    flex-wrap: wrap;
     position: static;
     gap: 1.5rem;
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     align-items: center;
   }
 
@@ -1084,6 +1089,7 @@ footer nav ul li a:hover {
   }
 
   .skill-category {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
@@ -1093,7 +1099,7 @@ footer nav ul li a:hover {
   .skill-category h3 {
     font-size: 1.5rem;
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
 
   .skill-icons {
