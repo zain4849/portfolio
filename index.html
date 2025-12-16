@@ -25,6 +25,8 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
+    <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
@@ -71,6 +73,7 @@
         </nav> -->
 
         <!-- Hero Section -->
+
         <section class="hero" id="home">
           <div class="hero-display">
             <p id="aspire-role"><span>Aspiring</span> Full Stack Developer</p>
@@ -98,7 +101,11 @@
                   <i class="devicon-github-original custom-links-color"></i>
                 </a>
               </li>
-              <li><span id="role">Jr.Frontend Developer</span></li>
+              <li>
+                <span id="role-box">
+                  <span id="role-text">Jr.Frontend Developer</span>
+                </span>
+              </li>
             </ul>
           </div>
           <div class="hero-content">
@@ -109,6 +116,14 @@
             <div class="quick-links">
               <button class="contact-link">Contact Me</button>
               <button class="projects-btn">View My Work</button>
+              <a
+                href="assets/zain-ali-cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open CV in a new tab (PDF)"
+                class="cv-btn"
+                >Download CV <i class="ri-article-line"></i
+              ></a>
             </div>
             <!-- <a href="#projects" class="cta-button">View My Work</a> -->
           </div>
@@ -124,9 +139,22 @@
               <div class="card-content">
                 <h2 class="project-title">eCommerce Web App</h2>
                 <p class="project-description">
-                  Full-stack eCommerce application (in progress) built with
-                  Next.js, TypeScript, Node.js, and MongoDB.
+                  Full-stack eCommerce application (in progress)
                 </p>
+                <div
+                  style="
+                    margin-block: 0.5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.25rem;
+                  "
+                >
+                  <span class="project-tag">Next.js</span>
+                  <span class="project-tag">TypeScript</span>
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">Express</span>
+                  <span class="project-tag">MongoDB</span>
+                </div>
                 <a href="https://github.com/zain4849/ecommerce-fullstack"
                   ><i
                     class="ri-github-fill"
@@ -146,6 +174,20 @@
                   Built a small URL shortener that creates simple, shareable
                   links.
                 </p>
+                <div
+                  style="
+                    margin-block: 0.5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.25rem;
+                  "
+                >
+                  <span class="project-tag"><i class="devicon-tailwindcss-plain custom-skills-white">React.js</i></span>
+                  <span class="project-tag">Go</span>
+                  <span class="project-tag">Echo</span>
+                  <span class="project-tag">SQLite</span>
+                  <span class="project-tag">GORM</span>
+                </div>
                 <a href="https://github.com/zain4849/url-shortener"
                   ><i
                     class="ri-github-fill"
@@ -164,6 +206,20 @@
                   Built a CNN model to accurately classify traffic signs from
                   images.
                 </p>
+                <div
+                  style="
+                    margin-block: 0.5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.25rem;
+                  "
+                >
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Numpy</span>
+                  <span class="project-tag">Pandas</span>
+                  <span class="project-tag">Image Classification</span>
+                  <span class="project-tag">TensorFlow</span>
+                </div>
                 <a
                   href="https://github.com/zain4849/TrafficSign-Image-Classification.git"
                   ><i
@@ -186,6 +242,19 @@
                   A streamlined web application designed to gather star-based
                   customer ratings along with written feedback.
                 </p>
+                <div
+                  style="
+                    margin-block: 0.5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.25rem;
+                  "
+                >
+                  <span class="project-tag">HTML</span>
+                  <span class="project-tag">CSS</span>
+                  <span class="project-tag">React.js</span>
+                  <span class="project-tag">React icons</span>
+                </div>
                 <a
                   href="https://github.com/zain4849/customer-feedback-collector"
                   target="_blank"
@@ -215,6 +284,10 @@
                   ><span class="tooltip">CSS3</span>
                 </li>
                 <li>
+                  <i class="devicon-tailwindcss-plain custom-skills-white"></i
+                  ><span class="tooltip">Tailwind CSS</span>
+                </li>
+                <li>
                   <i class="devicon-javascript-plain custom-skills-white"></i
                   ><span class="tooltip">JavaScript</span>
                 </li>
@@ -224,11 +297,11 @@
                 </li>
                 <li>
                   <i class="devicon-react-plain custom-skills-white"></i
-                  ><span class="tooltip">React</span>
+                  ><span class="tooltip">React.js</span>
                 </li>
                 <li>
-                  <i class="devicon-tailwindcss-plain custom-skills-white"></i
-                  ><span class="tooltip">Tailwind CSS</span>
+                  <i class="devicon-nextjs-plain custom-skills-white"></i
+                  ><span class="tooltip">Next.js</span>
                 </li>
               </ul>
             </div>
@@ -253,6 +326,10 @@
                   ><span class="tooltip">PostgreSQL</span>
                 </li>
                 <li>
+                  <i class="devicon-mysql-plain custom-skills-white"></i
+                  ><span class="tooltip">MySQL</span>
+                </li>
+                <li>
                   <i
                     class="fa-brands fa-stripe"
                     style="color: #888888; font-size: 52px"
@@ -260,10 +337,7 @@
                   ><span class="tooltip">Stripe</span>
                 </li>
                 <li>
-                  <i
-                    style="color: #888888; font-size: 52px"
-                  ></i
-                  ><span></span>
+                  <i style="color: #888888; font-size: 52px"></i><span></span>
                 </li>
               </ul>
             </div>
@@ -288,16 +362,14 @@
                   ><span class="tooltip">npm</span>
                 </li>
                 <li>
-                  <i
-                    style="color: #888888; font-size: 52px"
-                  ></i
-                  ><span></span>
+                  <i class="devicon-postman-plain custom-skills-white"></i
+                  ><span class="tooltip">Postman</span>
                 </li>
                 <li>
-                  <i
-                    style="color: #888888; font-size: 52px"
-                  ></i
-                  ><span></span>
+                  <i style="color: #888888; font-size: 52px"></i><span></span>
+                </li>
+                <li>
+                  <i style="color: #888888; font-size: 52px"></i><span></span>
                 </li>
                 <!-- <li>
                   <img
@@ -321,6 +393,7 @@
                   /><span class="tooltip">npm</span>
                 </li> -->
               </ul>
+            </div>
           </div>
         </section>
 
@@ -374,7 +447,7 @@
 
           <nav>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
             </ul>
           </nav>

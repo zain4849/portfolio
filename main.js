@@ -148,3 +148,33 @@ contactForm.addEventListener('submit', sendEmail)
 //   span.textContent = letter;
 //   h1.appendChild(span);
 // });
+
+// ==================== Role Animation Transition ====================
+const role = document.getElementById("role-text");
+
+const fonts = [
+  '"Garamond", serif',
+  '"Pacifico", cursive',
+  '"Inter", sans-serif',
+  '"Didot", serif',
+  '"JetBrains Mono", monospace',
+];
+
+let index = 0;
+
+// initial delay
+setTimeout(() => {
+  setInterval(() => {
+    // fade out
+    role.style.opacity = 0;
+
+    setTimeout(() => {
+      // change font when invisible
+      index = (index + 1) % fonts.length;
+      role.style.fontFamily = fonts[index];
+
+      // fade back in
+      role.style.opacity = 1;
+    }, 200);
+  }, 1000); // total cycle time
+}, 2);

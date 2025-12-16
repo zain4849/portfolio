@@ -151,17 +151,17 @@ document.querySelectorAll(".skill-icons li").forEach((container) => {
   // const heading = querySelectorAll()
   const skill = container.querySelector("i");
   container.addEventListener("mouseenter", () => {
-    if (skill.classList.contains("fa-stripe")) {
-      skill.style.color = "#635BFF";
-    }
+    if (skill.classList.contains("fa-stripe")) skill.style.color = "#635BFF";
+    if (skill.classList.contains("devicon-nextjs-plain")) skill.style.color = "#fff";
+
     skill.classList.add("colored", "custom-skills-bg");
     skill.classList.remove("custom-skills-white");
   });
   container.addEventListener("mouseleave", () => {
-    if (skill.classList.contains("fa-stripe")) {
-      skill.style.color = "#888888";
-    }
-    skill.classList.remove("colored");
+    if (skill.classList.contains("fa-stripe")) skill.style.color = "#888888";  
+    if (skill.classList.contains("devicon-nextjs-plain")) skill.style.color = "#888";
+
+      skill.classList.remove("colored");
     skill.classList.add("custom-skills-white");
   });
 
