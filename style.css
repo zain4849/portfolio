@@ -492,7 +492,8 @@ section {
   /* color: var(--bg-700); */
   /* background: var(--bg-100); */
   /* outline: solid 1px var(--bg-100); */
-  transform: scale(1.15);
+  transform: scale(1.05);
+  
 }
 
 .img-grid-container {
