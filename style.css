@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Code:wght@300..700&family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Meow+Script&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Code:wght@300..700&family=GFS+Didot&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Meow+Script&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -250,7 +250,6 @@ section:not(.hero) {
   overflow: hidden;
 } */
 
-
 /* ================== Sections & Hero ================== */
 section:first-of-type {
   padding: 0;
@@ -351,12 +350,12 @@ section {
   align-items: center;
   justify-content: center;
 
-  border: 2px dashed var(--bg-100);
+  /* border: 2px dashed var(--bg-100); */
   padding: 24px 32px;
 
   /* LOCK THE BOX */
-  min-width: 400px;      /* adjust once */
-  min-height: 100px;      /* adjust once */
+  min-width: 400px; /* adjust once */
+  min-height: 100px; /* adjust once */
 
   box-sizing: border-box;
 }
@@ -364,7 +363,7 @@ section {
 #role-text {
   font-size: 1.65rem;
   color: var(--bg-100);
-  line-height: 1;        /* IMPORTANT */
+  line-height: 1; /* IMPORTANT */
   white-space: nowrap;
   transition: opacity 0.35s ease;
 }
@@ -493,7 +492,6 @@ section {
   /* background: var(--bg-100); */
   /* outline: solid 1px var(--bg-100); */
   transform: scale(1.05);
-  
 }
 
 .img-grid-container {
@@ -653,6 +651,73 @@ hr {
 .skill-icons li:hover .tooltip {
   transform: translateX(-50%) translateY(-20px); /* Slide up */
   opacity: 0.7;
+}
+
+/* ================= Education ================= */
+
+.experience-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 70%;
+  margin: 0px auto;
+}
+
+.experience-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  min-height: 100%;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.experience-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 0.75rem;
+}
+
+.education-details  {
+  margin-top: 1.5rem;
+}
+
+.experience-right {
+  font-size: 5rem;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 50%;
+  margin-bottom: 2rem;
+  gap: 12rem;
+}
+
+.card-rect {
+  position: relative;
+  width: max-content;
+  background-color: transparent;
+  height: max-content;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 4rem;
+  border-radius: 20px;
+
+  /* glass effect */
+  /* background: rgba(255, 255, 255, 0.05); */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+  text-align: left;
 }
 
 /* ================= Contact ================= */
@@ -895,7 +960,8 @@ footer nav ul li a:hover {
     font-size: 18px;
   }
 
-  .quick-links button, .quick-links a {
+  .quick-links button,
+  .quick-links a {
     width: 250px;
     height: 50px;
     font-size: 1rem;
@@ -918,12 +984,13 @@ footer nav ul li a:hover {
     font-size: 1rem;
   }
 
-  .project-description, .project-tag {
+  .project-description,
+  .project-tag {
     font-size: 0.65rem;
   }
 
   .project-tag {
-  padding: 0.05rem 0.5rem;
+    padding: 0.05rem 0.5rem;
   }
 
   .projects-grid {
