@@ -350,12 +350,13 @@ section {
   align-items: center;
   justify-content: center;
 
-  /* border: 2px dashed var(--bg-100); */
+  border: 2px dashed var(--bg-100);
+  border-radius: 16px;
   padding: 24px 32px;
 
   /* LOCK THE BOX */
-  min-width: 400px; /* adjust once */
-  min-height: 100px; /* adjust once */
+  min-width: 410px; /* adjust once */
+  min-height: 110px; /* adjust once */
 
   box-sizing: border-box;
 }
@@ -374,6 +375,14 @@ section {
   height: auto;
   text-align: center;
   z-index: 2;
+}
+
+.location {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: yellow;
+  text-decoration-thickness: 2px; /* or 'from-font', 'auto' */
+  text-underline-offset: 8px;
 }
 
 .quick-links {
@@ -472,6 +481,7 @@ section {
 }
 
 .project-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -514,12 +524,17 @@ section {
   flex-direction: column;
   flex: 1;
   padding: 20px 20px;
-  height: 12%;
-  transition: height 0.4s ease-in-out;
+  height: 50%;
+  transition: top 0.4s ease-in-out;
+    position: absolute;
+    top: 439px;
+    z-index: 100;
+    background: black;
 }
 
 .project-card:hover .card-content {
-  height: 50%;
+  /* height: 50%; */
+  top: 255px;
 }
 
 .project-description {
@@ -663,7 +678,7 @@ hr {
   margin: 0px auto;
 }
 
-.experience-left {
+.experience-left, .education-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -674,19 +689,20 @@ hr {
   gap: 2rem;
 }
 
-.experience-box {
+.experience-box, .education-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* height: 200px; */
   /* align-items: center; */
   gap: 0.75rem;
 }
 
-.education-details  {
+.experience-details, .education-details  {
   margin-top: 1.5rem;
 }
 
-.experience-right {
+.experience-right, .education-right {
   font-size: 5rem;
   color: gray;
   display: flex;
@@ -701,7 +717,7 @@ hr {
 
 .card-rect {
   position: relative;
-  width: max-content;
+  width: 100%;
   background-color: transparent;
   height: max-content;
   display: flex;
