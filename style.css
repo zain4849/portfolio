@@ -378,11 +378,23 @@ section {
 }
 
 .location {
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-  text-decoration-color: yellow;
-  text-decoration-thickness: 2px; /* or 'from-font', 'auto' */
-  text-underline-offset: 8px;
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #ff0000 0%,
+    #ff0000 15%,
+    #00732f 15%,
+    #00732f 43%,
+    #ffffff 43%,
+    #ffffff 71%,
+    #000000 71%,
+    #000000 100%
+  );
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  padding-bottom: 6px;
 }
 
 .quick-links {
@@ -526,10 +538,10 @@ section {
   padding: 20px 20px;
   height: 50%;
   transition: top 0.4s ease-in-out;
-    position: absolute;
-    top: 439px;
-    z-index: 100;
-    background: black;
+  position: absolute;
+  top: 439px;
+  z-index: 100;
+  background: black;
 }
 
 .project-card:hover .card-content {
@@ -592,7 +604,14 @@ section {
 .hover-glow-text {
   color: #fff !important;
   /* background-color: white; */
-  text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 0px #fff;
+}
+
+/* Used in Experience & Education Section */
+.hover-glow-text-sub {
+  color: #fff !important;
+  /* background-color: white; */
+  text-shadow: 0 0 5px var(--bg-500), 0 0 0px var(--bg-500), 0 0 0px var(--bg-500);
 }
 
 hr {
@@ -668,41 +687,38 @@ hr {
   opacity: 0.7;
 }
 
-/* ================= Education ================= */
+/* ================= Experience & Education ================= */
 
-.experience-wrapper {
+.experience-wrapper,
+.education-wrapper {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 70%;
   margin: 0px auto;
+  gap: 2rem;
 }
 
-.experience-left, .education-left {
+.experience-left,
+.education-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
   min-height: 100%;
   margin-bottom: 2rem;
   gap: 2rem;
 }
 
-.experience-box, .education-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* height: 200px; */
-  /* align-items: center; */
-  gap: 0.75rem;
-}
-
-.experience-details, .education-details  {
+.experience-details,
+.education-details {
   margin-top: 1.5rem;
 }
 
-.experience-right, .education-right {
+.experience-right,
+.education-right {
   font-size: 5rem;
   color: gray;
   display: flex;
@@ -715,13 +731,36 @@ hr {
   gap: 12rem;
 }
 
+.yoe-title {
+  color: var(--bg-500);
+  transition: all 0.3s;
+
+}
+
+.yoe span {
+  color: var(--bg-500);
+  transition: all 0.3s;
+
+}
+
+.experience-box,
+.education-box {
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  justify-content: space-between;
+  /* height: 200px; */
+  /* align-items: center; */
+  gap: 0.75rem;
+}
+
 .card-rect {
   position: relative;
-  width: 100%;
+  width: 65%;
   background-color: transparent;
   height: max-content;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
   padding: 4rem;
@@ -735,6 +774,25 @@ hr {
 
   text-align: left;
 }
+
+.experience-title, .education-title {
+  color: var(--bg-200);
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+
+}
+
+.experience-subtitle, .education-subtitle {
+  font-family: var(--ff-text);
+  font-size: var(--fs-regular);
+  color: var(--bg-500);
+  font-style: oblique;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+
+
 
 /* ================= Contact ================= */
 .contact {

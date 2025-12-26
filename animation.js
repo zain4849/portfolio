@@ -195,7 +195,78 @@ document.querySelectorAll(".skill-category").forEach((cat) => {
   });
 });
 
-document.querySelectorAll("skill-icons li i").forEach((skill) => {});
+document.querySelectorAll(".skill-icons li").forEach((container) => {
+  // const heading = querySelectorAll()
+  const skill = container.querySelector("i");
+  container.addEventListener("mouseenter", () => {
+    if (skill.classList.contains("fa-stripe")) skill.style.color = "#635BFF";
+    if (skill.classList.contains("devicon-nextjs-plain")) skill.style.color = "#fff";
+
+    skill.classList.add("colored", "custom-skills-bg");
+    skill.classList.remove("custom-skills-white");
+  });
+  container.addEventListener("mouseleave", () => {
+    if (skill.classList.contains("fa-stripe")) skill.style.color = "#888888";  
+    if (skill.classList.contains("devicon-nextjs-plain")) skill.style.color = "#888";
+
+      skill.classList.remove("colored");
+    skill.classList.add("custom-skills-white");
+  });
+
+  const tip = container.querySelector(".tooltip");
+  container.addEventListener("mouseenter", () => {
+    gsap.to(tip, {
+      y: -2,
+      opacity: 1,
+      duration: 0.1,
+      ease: "power1.out",
+    });
+  });
+  container.addEventListener("mouseleave", () => {
+    gsap.to(tip, {
+      y: 2,
+      opacity: 0,
+      duration: 0.1,
+      ease: "power2.in",
+    });
+  });
+});
+
+// White glow of each category
+document.querySelectorAll(".skill-category").forEach((cat) => {
+  const h3 = cat.querySelector("h3");
+  cat.addEventListener("mouseenter", () => {
+    h3.classList.add("hover-glow-text");
+  });
+  cat.addEventListener("mouseleave", () => {
+    h3.classList.remove("hover-glow-text");
+  });
+});
+
+// Glow effect for Experience and Education titles, subtitles, YOE ,and dates
+// Each element glows according the its darkness level, so whiter glow lighter where as those with bg-500 glow but slightly darker and so on
+// Colors also change to white on hover on div experience box and education box, not individual
+document.querySelectorAll(".experience-box, .education-box").forEach((box) => {
+  box.addEventListener("mouseenter", () => {
+    box.querySelectorAll(".experience-title, .education-title, .yoe-title").forEach((title) => {
+      title.classList.add("hover-glow-text");
+    });
+    box.querySelectorAll(".experience-subtitle, .education-subtitle, .yoe span, .date").forEach((subtitle) => {
+      subtitle.classList.add("hover-glow-text-sub");
+    });
+  });
+  box.addEventListener("mouseleave", () => {
+    box.querySelectorAll(".experience-title, .education-title, .yoe-title").forEach((title) => {
+      title.classList.remove("hover-glow-text");
+    });
+    box.querySelectorAll(".experience-subtitle, .education-subtitle, .yoe span, .date").forEach((subtitle) => {
+      subtitle.classList.remove("hover-glow-text-sub");
+    });
+  });
+});
+
+
+
 
 // Smooth Navigation
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
