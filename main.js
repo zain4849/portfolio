@@ -62,7 +62,7 @@ if (!isTouchDevice) {
 
     blobs.forEach((blob, index) => {
       const pos = blobPositions[index];
-      const speed = Math.max(0.08, 0.24 - index * 0.04);
+      const speed = Math.max(0.08, 0.2 - index * 0.04);
       pos.x += (mouseX - pos.x) * speed;
       pos.y += (mouseY - pos.y) * speed;
       blob.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
