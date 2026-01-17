@@ -312,11 +312,10 @@ section {
   justify-content: center;
   align-items: center;
   gap: 48px;
-  position: absolute;
   bottom: 110px;
   left: 32px;
   list-style-type: none;
-  
+  margin: 0 auto;
 }
 
 .social-links {
@@ -598,8 +597,9 @@ section:not(.hero, .contact) h1 {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  width: 45%;
+  width: clamp(45%, 50vw, 55%);
   margin: 0px auto;
+  padding: 0 2rem;
 }
 
 .skill-category {
@@ -718,9 +718,10 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: clamp(65%, 70vw, 75%);
   margin: 0px auto;
   gap: 2rem;
+  padding: 0 1rem;
 }
 
 .experience-left,
@@ -742,7 +743,7 @@ hr {
 
 .experience-right,
 .education-right {
-  font-size: 5rem;
+  font-size: 4rem;
   color: gray;
   display: flex;
   flex-direction: column;
@@ -820,7 +821,7 @@ hr {
 }
 
 .education-duration {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 200;
 }
 
@@ -1047,12 +1048,6 @@ footer nav ul li a:hover {
     top: 200px;
   }
 
-  .meta {
-    gap: 2rem;
-    bottom: 55px;
-    left: 200px;
-  }
-
   .hero-content {
     max-width: 800px;
   }
@@ -1095,10 +1090,9 @@ footer nav ul li a:hover {
   }
 
   .project-card:hover .card-content {
-  /* height: 50%; */
-  top: 170px;
-
-}
+    /* height: 50%; */
+    top: 170px;
+  }
 
   .project-title {
     font-size: 1rem;
@@ -1244,7 +1238,6 @@ footer nav ul li a:hover {
     justify-content: flex-start;
   }
   .contact-form {
-    
     position: relative;
     width: 600px;
     background-color: transparent;
