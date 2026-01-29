@@ -122,7 +122,10 @@ body {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
   opacity: 0.9;
   will-change: transform;
-  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    opacity 0.25s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -166,6 +169,12 @@ nav {
   right: 0;
   z-index: 1000;
   padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
 }
 
 .nav-links {
@@ -260,11 +269,26 @@ section {
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+}
+
 .hero-display {
   position: relative;
   min-height: 600px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-display {
+    min-height: auto;
+    margin-top: 0;
+    padding: 0 1rem;
+  }
 }
 
 .hero-display h1 {
@@ -327,7 +351,10 @@ section {
 .social-links a i:hover {
   color: var(--bg-100);
   /* text-shadow: 0 0 12px rgba(255, 255, 255, 0.35); */
-  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 2px #fff,
+    0 0 5px #fff;
   /* box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);  */
   /* glow effect */
   /* box-shadow: 0 0 12px rgba(255, 255, 255, 0.35); */
@@ -417,7 +444,9 @@ section {
   font-size: clamp(1.2rem, 2vw, 2rem);
   border-radius: 16px;
   cursor: pointer;
-  transition: color 0.2s ease-in, background 0.2s ease-in;
+  transition:
+    color 0.2s ease-in,
+    background 0.2s ease-in;
 }
 
 .contact-link,
@@ -496,6 +525,21 @@ section:not(.hero, .contact) h1 {
   padding-left: 10px;
   border-left: 3px solid var(--bg-500);
   letter-spacing: 6px;
+}
+
+@media (max-width: 768px) {
+  section:not(.hero, .contact) h1 {
+    position: static;
+    writing-mode: horizontal-tb;
+    text-orientation: initial;
+    transform: none;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    border-left: none;
+    border-bottom: 3px solid var(--bg-500);
+    letter-spacing: 4px;
+  }
 }
 
 .projects-grid {
@@ -626,14 +670,19 @@ section:not(.hero, .contact) h1 {
 .hover-glow-text {
   color: #fff !important;
   /* background-color: white; */
-  text-shadow: 0 0 5px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 0px #fff,
+    0 0 0px #fff;
 }
 
 /* Used in Experience & Education Section */
 .hover-glow-text-sub {
   color: #fff !important;
   /* background-color: white; */
-  text-shadow: 0 0 5px var(--bg-500), 0 0 0px var(--bg-500),
+  text-shadow:
+    0 0 5px var(--bg-500),
+    0 0 0px var(--bg-500),
     0 0 0px var(--bg-500);
 }
 
@@ -702,7 +751,9 @@ hr {
   z-index: 1; /* Behind the image */
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .skill-icons li:hover .tooltip {
@@ -825,6 +876,18 @@ hr {
   font-weight: 200;
 }
 
+@media (max-width: 768px) {
+  .experience-duration {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .education-duration {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
 /* ================= Contact ================= */
 .contact {
   display: flex;
@@ -906,7 +969,9 @@ hr {
 }
 
 .contact-input:-webkit-autofill {
-  transition: background-color 6000s, color 6000s;
+  transition:
+    background-color 6000s,
+    color 6000s;
 }
 
 .contact-input::placeholder {
@@ -925,7 +990,9 @@ hr {
   padding: 0.05rem 0.5rem;
   background: var(--bg-700);
   pointer-events: none;
-  transition: top 0.3s, opacity 0.3s;
+  transition:
+    top 0.3s,
+    opacity 0.3s;
   opacity: 0;
 }
 
@@ -1071,7 +1138,9 @@ footer nav ul li a:hover {
     font-size: 1rem;
     border-radius: 16px;
     cursor: pointer;
-    transition: color 0.2s ease-in, background 0.2s ease-in;
+    transition:
+      color 0.2s ease-in,
+      background 0.2s ease-in;
   }
 
   /* ------------------ Projects ------------------  */
@@ -1297,6 +1366,11 @@ footer nav ul li a:hover {
     padding: 2rem;
   }
 
+  .project-card {
+    height: auto;
+    max-height: 400px;
+  }
+
   .skills-wrapper {
     width: 60%;
   }
@@ -1322,13 +1396,13 @@ footer nav ul li a:hover {
 
   /* Hero Section */
   .hero-display {
-    min-height: 400px;
-    margin-top: 20px;
+    min-height: auto;
+    margin-top: 0;
     padding: 0 1rem;
   }
 
   #title-name {
-    font-size: 8rem;
+    font-size: clamp(3.5rem, 12vw, 8rem);
   }
 
   #first-name {
@@ -1389,7 +1463,8 @@ footer nav ul li a:hover {
     padding: 0 1rem;
   }
 
-  .quick-links button {
+  .quick-links button,
+  .quick-links a {
     width: 100%;
     max-width: 100%;
     height: 60px;
@@ -1410,10 +1485,6 @@ footer nav ul li a:hover {
     letter-spacing: 4px;
   }
 
-  .projects {
-    padding: 2rem 0;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1423,7 +1494,17 @@ footer nav ul li a:hover {
 
   .project-card {
     max-width: 100%;
-    /* max-height: none;   */
+    height: auto;
+  }
+
+  .card-content {
+    position: static;
+    top: auto;
+    height: auto;
+  }
+
+  .project-card:hover .card-content {
+    top: auto;
   }
 
   /* Skills Section */
@@ -1462,10 +1543,63 @@ footer nav ul li a:hover {
     width: 70px;
     height: 70px;
     padding: 16px;
+    margin: 0 auto;
   }
 
   .skill-icons li i {
     font-size: 48px;
+  }
+
+  .tooltip {
+    bottom: 110%;
+  }
+
+  /* Experience & Education Section */
+  .experience-wrapper,
+  .education-wrapper {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .experience-box,
+  .education-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .card-rect {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  .experience-right,
+  .education-right {
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .experience-title,
+  .education-title {
+    font-size: 1.5rem;
+  }
+
+  .experience-subtitle,
+  .education-subtitle {
+    font-size: 1rem;
+  }
+
+  .experience-duration,
+  .education-duration {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .yoe,
+  .yoe-title {
+    font-size: 1rem;
+    text-align: center;
   }
 
   /* Contact Section */
@@ -1483,9 +1617,9 @@ footer nav ul li a:hover {
   }
 
   .contact-form {
-    width: min(90vw, 700px);
-    /* max-width: 100%; */
-    /* height: auto; */
+    width: 100%;
+    max-width: 90vw;
+    height: auto;
     padding: 2rem 1.5rem;
     background-color: transparent;
   }
@@ -1496,12 +1630,13 @@ footer nav ul li a:hover {
   }
 
   .contact-area {
-    height: 150px;
+    height: 120px;
   }
 
   .contact-input {
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
+    border: 3px solid var(--bg-500);
   }
 
   .contact-btn {
@@ -1537,20 +1672,20 @@ footer nav ul li a:hover {
 /* Small mobile (480px and below) */
 @media (max-width: 480px) {
   #title-name {
-    font-size: 8rem;
+    font-size: clamp(2.5rem, 10vw, 6rem);
   }
 
   #aspire-role {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .projects h1,
   .skills h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .contact-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .skill-icons li {
@@ -1564,12 +1699,38 @@ footer nav ul li a:hover {
   }
 
   .social-links a i {
-    font-size: 40px;
+    font-size: 36px;
   }
 
-  #role {
-    font-size: 18px;
-    padding: 12px 20px;
+  #role-box {
+    min-width: auto;
+    min-height: auto;
+    padding: 16px 20px;
+    width: 100%;
+  }
+
+  #role-text {
+    font-size: 1.2rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .contact-box {
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .contact-area {
+    height: 100px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 1.5rem 0.5rem;
   }
 }
 
@@ -1598,9 +1759,21 @@ footer nav ul li a:hover {
 @keyframes stars {
   0%,
   100% {
-    background-position: 0% 0%, 50% 50%, 100% 0%, 0% 100%, 50% 0%, 100% 100%;
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 0%,
+      0% 100%,
+      50% 0%,
+      100% 100%;
   }
   50% {
-    background-position: 100% 100%, 0% 0%, 50% 50%, 100% 0%, 0% 100%, 50% 50%;
+    background-position:
+      100% 100%,
+      0% 0%,
+      50% 50%,
+      100% 0%,
+      0% 100%,
+      50% 50%;
   }
 }
